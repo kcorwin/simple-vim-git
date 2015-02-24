@@ -2,6 +2,7 @@ function! s:SendCmdToPreview(cmd)
 	let tmpfile = tempname()
 	silent execute ":!" . a:cmd . " >" . tmpfile
 	silent execute ":pedit! ".tmpfile
+	redraw!
 endfunction
 
 function! s:Gitlog(options)
